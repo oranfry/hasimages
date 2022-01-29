@@ -6,6 +6,10 @@ trait hasimages
 {
     protected function hasimages_init()
     {
+        if (!array_key_exists('comment', $this->fields)) {
+            error_response('Hasimages requires a comment field (linetype class "' . static::class . '")');
+        }
+
         foreach (static::IMAGE_SIZES as $image => $details) {
             $this->fields["{$image}_image_id"] = function ($records) use ($image) : ?string {
                 if (@$records["/{$image}_image/image"]->id) {
@@ -25,14 +29,10 @@ trait hasimages
 
     protected function hasimages_unpack($line, $oldline, $old_inlines)
     {
-        if (!property_exists($line, 'comment')) {
-            error_response('Hasimages requires a line comment (linetype "' . $this->name . '")');
-        }
-
         foreach (static::IMAGE_SIZES as $image => $details) {
             if (@$line->{"{$image}_image_id"}) {
                 $child = $line->{"{$image}_image"} = (object) [
-                    'title' => implode(' - ', array_filter([ucfirst($this->table),  ucfirst($image), $line->comment])),
+                    'title' => implode(' - ', array_filter([ucfirst($this->table), ucfirst($image), @$line->comment])),
                 ];
 
                 $line->{"{$image}_image"} = $child;

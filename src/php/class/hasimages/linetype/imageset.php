@@ -35,7 +35,7 @@ class imageset extends \Linetype
         foreach ($this->image_sizes as $image => $details) {
             $line->{"{$image}_image"} = @$line->$image ? (object) [
                 'content' => $line->$image,
-                'title' => implode(' - ', array_filter([ucfirst($this->table),  ucfirst($image), @$line->comment])),
+                'title' => implode(' - ', array_filter([ucfirst($this->table), ucfirst($image), @$line->comment])),
             ] : 'unchanged';
         }
     }
