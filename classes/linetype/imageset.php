@@ -3,7 +3,7 @@ namespace hasimages\linetype;
 
 use Linetype;
 
-class imageset extends \Linetype
+class imageset extends \jars\Linetype
 {
     public $image_sizes;
 

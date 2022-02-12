@@ -1,7 +1,7 @@
 <?php
 namespace hasimages\linetype;
 
-class image extends \Linetype
+class image extends \jars\Linetype
 {
     function __construct()
     {

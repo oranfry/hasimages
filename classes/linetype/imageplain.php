@@ -1,7 +1,7 @@
 <?php
 namespace hasimages\linetype;
 
-class imageplain extends \Linetype
+class imageplain extends \jars\Linetype
 {
     function __construct()
     {
