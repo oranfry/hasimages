@@ -2,12 +2,14 @@
 
 namespace hasimages\linetype\traight;
 
+use Exception;
+
 trait hasimages
 {
     protected function hasimages_init()
     {
         if (!array_key_exists('comment', $this->fields)) {
-            error_response('Hasimages requires a comment field (linetype class "' . static::class . '")');
+            throw new Exception('Hasimages requires a comment field (linetype class "' . static::class . '")');
         }
 
         foreach (static::IMAGE_SIZES as $image => $details) {
