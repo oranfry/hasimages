@@ -1,9 +1,8 @@
 <?php
+
 namespace hasimages\linetype;
 
-use Linetype;
-
-class imageset extends \jars\Linetype
+abstract class imageset extends \jars\Linetype
 {
     public $image_sizes;
 
