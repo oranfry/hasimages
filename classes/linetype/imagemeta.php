@@ -1,4 +1,5 @@
 <?php
+
 namespace hasimages\linetype;
 
 class imagemeta extends \hasimages\linetype\imagemetaplain

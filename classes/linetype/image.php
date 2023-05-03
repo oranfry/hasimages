@@ -1,4 +1,5 @@
 <?php
+
 namespace hasimages\linetype;
 
 class image extends \jars\Linetype

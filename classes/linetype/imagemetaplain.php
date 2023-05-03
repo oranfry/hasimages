@@ -1,4 +1,5 @@
 <?php
+
 namespace hasimages\linetype;
 
 class imagemetaplain extends \jars\Linetype
@@ -9,7 +10,7 @@ class imagemetaplain extends \jars\Linetype
 
         $this->table = 'imagemeta';
 
-        $this->simple_strings('title');
+        $this->simple_string('title');
 
         $this->borrow['image_id'] = function ($line) {
             return @$line->image->id;
