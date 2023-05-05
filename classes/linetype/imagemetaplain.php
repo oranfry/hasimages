@@ -10,7 +10,8 @@ class imagemetaplain extends \jars\Linetype
 
         $this->table = 'imagemeta';
 
-        $this->simple_string('title');
+        $this->fields['title'] = fn ($records): ?string => $records['/']->title;
+        $this->unfuse_fields['title'] = fn ($line): ?string => $line->title;
 
         $this->borrow['image_id'] = function ($line) {
             return @$line->image->id;

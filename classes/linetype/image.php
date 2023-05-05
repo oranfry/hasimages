@@ -23,9 +23,9 @@ class image extends \jars\Linetype
         ];
     }
 
-    function validate($line)
+    function validate($line): array
     {
-        $errors = [];
+        $errors = parent::validate($line);
 
         if (imagecreatefromstring(base64_decode($line->content)) === false) {
             $errors[] = 'not valid image data';

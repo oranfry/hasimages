@@ -39,9 +39,9 @@ abstract class imageset extends \jars\Linetype
         }
     }
 
-    function validate($line)
+    function validate($line): array
     {
-        $errors = [];
+        $errors = parent::validate($line);
 
         foreach ($this->image_sizes as $image => $details) {
             if (@$line->$image) {
