@@ -11,7 +11,7 @@ abstract class imageset extends \jars\Linetype
         parent::__construct();
 
         $this->fields['comment'] = function ($records) {
-            return $records['/']->comment;
+            return $records['/']->comment ?? null;
         };
 
         foreach ($this->image_sizes as $image => $details) {

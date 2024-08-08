@@ -12,7 +12,7 @@ trait hasimages
             throw new Exception('Hasimages requires a comment field (linetype class "' . static::class . '")');
         }
 
-        foreach (static::IMAGE_SIZES as $image => $details) {
+        foreach (array_keys(static::IMAGE_SIZES) as $image) {
             $this->fields["{$image}_image_id"] = function ($records) use ($image) : ?string {
                 if (@$records["/{$image}_image/image"]->id) {
                     return (string) $records["/{$image}_image/image"]->id;
@@ -31,7 +31,7 @@ trait hasimages
 
     protected function hasimages_unpack($line, $oldline, $old_inlines)
     {
-        foreach (static::IMAGE_SIZES as $image => $details) {
+        foreach (array_keys(static::IMAGE_SIZES) as $image) {
             if (@$line->{"{$image}_image_id"}) {
                 $child = $line->{"{$image}_image"} = (object) [
                     'title' => implode(' - ', array_filter([ucfirst($this->table), ucfirst($image), @$line->comment])),
