@@ -47,9 +47,15 @@ abstract class imageset extends \jars\Linetype
             if (@$line->$image) {
                 $imagedata = imagecreatefromstring(base64_decode($line->$image));
 
+                $expectedWidth = $details['size'][0] ?? null;
+                $expectedHeight = $details['size'][1] ?? null;
+
                 if ($imagedata === false) {
                     $errors[] = $image . ' does not contain valid image data';
-                } elseif (imagesx($imagedata) !== $details['size'][0] || imagesy($imagedata) !== $details['size'][1]) {
+                } elseif (
+                    $expectedWidth && imagesx($imagedata) !== $expectedWidth
+                    || $expectedHeight && imagesy($imagedata) !== $expectedHeight
+                ) {
                     $errors[] = "{$image} image should be {$details['size'][0]}x{$details['size'][1]}";
                 }
             }
