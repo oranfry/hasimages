@@ -45,14 +45,14 @@ abstract class imageset extends \jars\Linetype
 
         foreach ($this->image_sizes as $image => $details) {
             if (@$line->$image) {
-                if (false === $imagedata = imagecreatefromstring(base64_decode($line->$image))) {
+                if (false === $imagedata = \imagecreatefromstring(base64_decode($line->$image))) {
                     $errors[] = $image . ' does not contain valid image data';
 
                     continue;
                 }
 
-                $actualHeight = imagesy($imagedata);
-                $actualWidth = imagesx($imagedata);
+                $actualHeight = \imagesy($imagedata);
+                $actualWidth = \imagesx($imagedata);
                 $expectedHeight = $details['size'][1] ?? null;
                 $expectedWidth = $details['size'][0] ?? null;
 

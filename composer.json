@@ -1,8 +1,11 @@
 {
-    "name": "oranfry/hasimages",
     "autoload": {
         "psr-4": {
             "hasimages\\": "classes"
         }
+    },
+    "name": "oranfry/hasimages",
+    "require": {
+        "ext-gd": "*"
     }
 }
