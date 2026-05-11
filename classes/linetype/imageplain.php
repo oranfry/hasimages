@@ -2,7 +2,7 @@
 
 namespace hasimages\linetype;
 
-class imageplain extends \jars\Linetype
+class imageplain extends \OranFry\Jars\Core\Linetype
 {
     function __construct()
     {

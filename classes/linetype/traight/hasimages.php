@@ -29,7 +29,7 @@ trait hasimages
         }
     }
 
-    protected function hasimages_unpack($line, $oldline, $old_inlines)
+    protected function hasimages_unpack($line, $oldline)
     {
         foreach (array_keys(static::IMAGE_SIZES) as $image) {
             if (@$line->{"{$image}_image_id"}) {

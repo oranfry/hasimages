@@ -2,7 +2,7 @@
 
 namespace hasimages\linetype;
 
-abstract class imageset extends \jars\Linetype
+abstract class imageset extends \OranFry\Jars\Core\Linetype
 {
     public $image_sizes;
 
@@ -27,9 +27,9 @@ abstract class imageset extends \jars\Linetype
         }
     }
 
-    public function unpack($line, $oldline, $old_inlines)
+    public function unpack($line, $oldline)
     {
-        parent::unpack($line, $oldline, $old_inlines);
+        parent::unpack($line, $oldline);
 
         foreach ($this->image_sizes as $image => $details) {
             $line->{"{$image}_image"} = @$line->$image ? (object) [

@@ -21,9 +21,9 @@ class imagemeta extends \hasimages\linetype\imagemetaplain
         ];
     }
 
-    public function unpack($line, $oldline, $old_inlines)
+    public function unpack($line, $oldline)
     {
-        parent::unpack($line, $oldline, $old_inlines);
+        parent::unpack($line, $oldline);
 
         if (@$line->content) {
             $line->image = (object) [
