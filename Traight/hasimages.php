@@ -1,6 +1,6 @@
 <?php
 
-namespace hasimages\linetype\traight;
+namespace OranFry\HasImages\Linetype\Traight;
 
 use Exception;
 

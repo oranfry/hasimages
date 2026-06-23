@@ -1,8 +1,8 @@
 <?php
 
-namespace hasimages\linetype;
+namespace OranFry\HasImages\Linetype;
 
-class imagemeta extends \hasimages\linetype\imagemetaplain
+class imagemeta extends imagemetaplain
 {
     function __construct()
     {

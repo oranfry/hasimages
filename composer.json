@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "hasimages\\": "classes"
+            "OranFry\\HasImages\\Linetype\\": ""
         }
     },
     "name": "oranfry/hasimages",

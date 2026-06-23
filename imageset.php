@@ -1,6 +1,6 @@
 <?php
 
-namespace hasimages\linetype;
+namespace OranFry\HasImages\Linetype;
 
 abstract class imageset extends \OranFry\Jars\Core\Linetype
 {
