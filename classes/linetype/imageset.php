@@ -2,7 +2,7 @@
 
 namespace hasimages\linetype;
 
-abstract class imageset extends \jars\Linetype
+abstract class imageset extends \OranFry\Jars\Core\Linetype
 {
     public $image_sizes;
 

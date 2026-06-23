@@ -2,7 +2,7 @@
 
 namespace hasimages\linetype;
 
-class imagemetaplain extends \jars\Linetype
+class imagemetaplain extends \OranFry\Jars\Core\Linetype
 {
     function __construct()
     {
@@ -10,8 +10,8 @@ class imagemetaplain extends \jars\Linetype
 
         $this->table = 'imagemeta';
 
-        $this->fields['title'] = fn ($records): ?string => $records['/']->title;
-        $this->unfuse_fields['title'] = fn ($line): ?string => $line->title;
+        $this->fields['title'] = fn ($records): ?string => $records['/']->title ?? null;
+        $this->unfuse_fields['title'] = fn ($line): ?string => $line->title ?? null;
 
         $this->borrow['image_id'] = function ($line) {
             return @$line->image->id;
