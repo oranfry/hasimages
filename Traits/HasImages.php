@@ -1,10 +1,10 @@
 <?php
 
-namespace OranFry\HasImages\Linetype\Traight;
+namespace OranFry\HasImages\Linetype\Traits;
 
 use Exception;
 
-trait hasimages
+trait HasImages
 {
     protected function hasimages_init()
     {

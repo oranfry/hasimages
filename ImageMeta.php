@@ -2,7 +2,7 @@
 
 namespace OranFry\HasImages\Linetype;
 
-class imagemeta extends imagemetaplain
+class ImageMeta extends ImageMetaPlain
 {
     function __construct()
     {

@@ -2,7 +2,7 @@
 
 namespace OranFry\HasImages\Linetype;
 
-class image extends \OranFry\Jars\Core\Linetype
+class Image extends \OranFry\Jars\Core\Linetype
 {
     function __construct()
     {
