@@ -1,6 +1,6 @@
 <?php
 
-namespace OranFry\HasImages\Linetype;
+namespace OranFry\HasImages\Linetypes;
 
 class ImagePlain extends \OranFry\Jars\Core\Linetype
 {
